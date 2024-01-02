@@ -77,6 +77,6 @@ def interpret_measurement(sensor_state):
 #        _LOGGER.error("Error in Finder T5 function: %s", str(e))
 #        return None
 
-#async def async_setup(hass: HomeAssistant, yaml_config: ConfigType):
-#    _LOGGER.error("test 2")
-#    return True
+async def async_setup(hass: HomeAssistant, yaml_config: ConfigType):
+    _LOGGER.error("test 2")
+    return True
