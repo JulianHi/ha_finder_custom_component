@@ -1,0 +1,1 @@
+# ha_finder_custom_component
