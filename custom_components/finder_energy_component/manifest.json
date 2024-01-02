@@ -1,0 +1,10 @@
+{
+  "domain": "finder_energy_component",
+  "name": "Custom finder energy component",
+  "version": "0.0.1",
+  "documentation": "https://github.com/JulianHi/ha_finder_custom_component",
+  "issue_tracker": "https://github.com/JulianHi/ha_finder_custom_component/issues",
+  "after_dependencies": [],
+  "requirements": [],
+  "codeowners": ["@JulianHi"]
+}
