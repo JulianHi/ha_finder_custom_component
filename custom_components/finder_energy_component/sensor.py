@@ -79,9 +79,19 @@ class FinderMeasurementSensor(Entity):
 def interpret_measurement(value):
     """Custom function to interpret the measurement."""
     try:
+
         # Replace this with your custom interpretation logic
-        interpreted_value = float(value)  # Placeholder logic, assuming the value is numeric
-        return round(interpreted_value, 2)
+
+        hex_value = float(value)  # Assuming the sensor state is in hexadecimal format
+        decade_exponent = (int(hex_value, 16) >> 24) - 1
+        signed_measurement = int(hex_value, 16) & 0xFFFFFF
+        interpreted_value = (signed_measurement * 10 ** decade_exponent)
+        # return round(interpreted_value, 2)
+        _LOGGER.info("Finder T5 function executed with result: %s", interpreted_value)
+        return interpreted_value
+
+        #interpreted_value = float(value)  # Placeholder logic, assuming the value is numeric
+        #return round(interpreted_value, 2)
     except ValueError as ve:
         _LOGGER.error("Error interpreting measurement: %s", str(ve))
         return None
